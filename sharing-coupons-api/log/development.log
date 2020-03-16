@@ -147,3 +147,159 @@ Processing by CouponsController#index as HTML
 Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 809)
 
 
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 13:30:46 -0700
+  [1m[35m (26.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CouponsController#index as HTML
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.9ms | Allocations: 6479)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 13:31:41 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 1011)
+
+
+Started GET "/shops" for 127.0.0.1 at 2020-03-16 13:37:30 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/shops"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/stores" for 127.0.0.1 at 2020-03-16 13:37:40 -0700
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (25.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 155ms (Views: 9.5ms | ActiveRecord: 25.8ms | Allocations: 4993)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 13:37:53 -0700
+Processing by CouponsController#index as HTML
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1029)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:05:50 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 16.8ms | ActiveRecord: 0.2ms | Allocations: 5522)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:10:21 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1010)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:10:22 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 994)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:11:48 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 994)
+
+
+Started GET "/store" for 127.0.0.1 at 2020-03-16 14:17:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/store"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/stores" for 127.0.0.1 at 2020-03-16 14:17:10 -0700
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (20.7ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 79ms (Views: 9.2ms | ActiveRecord: 20.7ms | Allocations: 3959)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:18:00 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 995)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:18:24 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 994)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:20:57 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 994)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:21:36 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 994)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 14:22:46 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (1.3ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 40ms (Views: 30.6ms | ActiveRecord: 1.3ms | Allocations: 994)
+
+

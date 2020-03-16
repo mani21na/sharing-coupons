@@ -16,10 +16,7 @@ class CouponsController < ApplicationController
 
     def destroy
         coupon = Coupon.find_by(id: params[:id])
-        coupon.destroy
-
-
-        
+        coupon.destroy 
     end
     
 end
