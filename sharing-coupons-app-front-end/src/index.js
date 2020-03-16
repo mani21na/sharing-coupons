@@ -1,12 +1,12 @@
 //Get all Coupons
 //Get all Stores
 
-
-const couponsAdapter = new GranolasAdapter("http://localhost:3000/coupons")
-const StoresAdapter = new BrandsAdapter("http://localhost:3000/stores")
+//server request
+const couponsAdapter = new CouponsAdapter("http://127.0.0.1:3000/coupons")
+//const StoresAdapter = new StoresAdapter("http://localhost:3000/stores")
 
 couponsAdapter.fetchCoupons()
-StoresAdapter.fetchStores()
+//StoresAdapter.fetchStores()
 
 const main = document.getElementById('main')
 const menu = document.getElementById('menu')
@@ -39,43 +39,60 @@ function handleFormSubmit(event){
 }
 
 const callbacks = {
-  allGranolas: renderAllGranolas,
-  granolasBrands: renderAllGranolasBrands,
-  newGranola: renderNewGranolaForm,
-  //newBrand: renderNewBrandForm
+  allCoupons: renderAllCoupons,
+  couponsStores: renderAllCouponsStores,
+  newCoupon: renderNewCouponForm,
+  //newStore: renderNewStoreForm
 }
 
-function renderAllGranolas(){
-  Granola.all.forEach(granola => {
-    main.appendChild(granola.fullRender())
-  })
-  //render all granolas with name, description, and brand
-}
-
-function renderAllGranolasBrands(){
-  Brand.all.forEach(brand => {
-    main.appendChild(brand.fullRender())
+function renderAllCoupons(){
+  Coupon.all.forEach(coupon => {
+    main.appendChild(coupon.fullRender())
   })
 }
 
-function renderNewGranolaForm(){
+function renderAllCouponsStores(){
+  Store.all.forEach(store => {
+    main.appendChild(store.fullRender())
+  })
+}
+
+function renderNewCouponForm(){
   formDiv.innerHTML = `
-    Granola Name:
+    Coupon Code:
     <input type="text" />
     <br>
-    Granola Description:
+    Offer Type:
+    <select>
+      <option value="online">Online Code</option>
+      <option value="store">In-Store Coupon</option>
+    </select>
+    <br>
+    Coupon Description:
     <input type="text" />
     <br>
     <select>
-       <option value="default" selected="selected">Select one option </option>
-     ${Brand.all.map(brand => {
-       return `<option value=${brand.id}>${brand.name}</option>`
+       <option value="default" selected="selected">Select Store of this Coupon </option>
+     ${Store.all.map(store => {
+       return `<option value=${store.id}>${store.name}</option>`
      }).join("")}
     </select>
-    <button>Make new Granola!</button>
+    <button type="button">New Coupon</button>
   `
   main.appendChild(formDiv)
 }
 
+//function renderNewStoreForm() {
+//  formDiv.innerHTML = `
+//    Store:
+//    <input type="text" />
+//    <br>
+//    Website:
+//    <input type="text" />
+//    <br>
+//    <button>New Store</button>
+//  `
+//  main.appendChild(formDiv)
+//}
 
 
