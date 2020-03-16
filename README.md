@@ -24,3 +24,4 @@ Things you may want to cover:
 * ...
 # sharing-coupons
 # sharing-coupons
+# js-project-sharing-coupons
