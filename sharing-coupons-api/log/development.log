@@ -303,3 +303,196 @@ Processing by CouponsController#index as */*
 Completed 200 OK in 40ms (Views: 30.6ms | ActiveRecord: 1.3ms | Allocations: 994)
 
 
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 16:41:10 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.3ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 48ms (Views: 32.7ms | ActiveRecord: 0.3ms | Allocations: 5496)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 17:01:10 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1019)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 18:19:46 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.4ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 32ms (Views: 25.6ms | ActiveRecord: 0.4ms | Allocations: 1018)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 18:22:32 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.4ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 994)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 18:23:06 -0700
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 36.2ms | ActiveRecord: 1.1ms | Allocations: 6482)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-16 18:24:22 -0700
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (25.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 224ms (Views: 47.5ms | ActiveRecord: 26.0ms | Allocations: 4600)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 18:25:20 -0700
+Started GET "/stores" for 127.0.0.1 at 2020-03-16 18:25:20 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as */*
+Processing by CouponsController#index as */*
+  [1m[36mStore Load (17.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 26ms (Views: 6.7ms | ActiveRecord: 17.2ms | Allocations: 1206)
+
+
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1803)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-16 18:30:09 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.6ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 1031)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-16 18:30:09 -0700
+Processing by StoresController#index as */*
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 904)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:07:21 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (20.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 9.3ms | ActiveRecord: 20.3ms | Allocations: 904)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:07:24 -0700
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 886)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-17 15:07:46 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.5ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.5ms | Allocations: 1015)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:07:46 -0700
+Processing by StoresController#index as */*
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 888)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-17 15:22:43 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CouponsController#index as HTML
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1016)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:37:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (22.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 85ms (Views: 12.5ms | ActiveRecord: 22.5ms | Allocations: 4284)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:38:48 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "coupons"."id" FROM "coupons" WHERE "coupons"."store_id" = ?[0m  [["store_id", "1"]]
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 165ms (Views: 157.2ms | ActiveRecord: 1.9ms | Allocations: 10780)
+
+
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:49:48 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as HTML
+  [1m[36mStore Load (1.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "coupons"."id" FROM "coupons" WHERE "coupons"."store_id" = ?[0m  [["store_id", "1"]]
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 1.4ms | Allocations: 1900)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-17 15:57:45 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 15:57:45 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as */*
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "coupons"."id" FROM "coupons" WHERE "coupons"."store_id" = ?[0m  [["store_id", "1"]]
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 2146)
+
+
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 40ms (Views: 33.2ms | ActiveRecord: 0.2ms | Allocations: 4575)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-17 16:03:15 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.1ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 16:03:15 -0700
+Processing by StoresController#index as */*
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 2034)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "coupons"."id" FROM "coupons" WHERE "coupons"."store_id" = ?[0m  [["store_id", "1"]]
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2361)
+
+
+Started GET "/coupons" for 127.0.0.1 at 2020-03-17 16:13:34 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/stores" for 127.0.0.1 at 2020-03-17 16:13:34 -0700
+Processing by CouponsController#index as */*
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons"[0m
+  ↳ app/controllers/coupons_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1041)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StoresController#index as */*
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "coupons"."id" FROM "coupons" WHERE "coupons"."store_id" = ?[0m  [["store_id", "1"]]
+  ↳ app/controllers/stores_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 1901)
+
+
