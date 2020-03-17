@@ -23,7 +23,7 @@ class Store{
         this.element.innerHTML = `
         <h1>${this.name}</h1>
         <h3>This Store's Coupons:</h3>
-        ${this.coupons().map(coupon => coupon.name).join(", ")}
+        ${this.coupons().map(coupon => coupon.code).join(", ")}
       `
       return this.element
     }
