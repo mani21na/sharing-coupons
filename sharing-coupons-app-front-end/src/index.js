@@ -3,10 +3,10 @@
 
 //server request
 const couponsAdapter = new CouponsAdapter("http://127.0.0.1:3000/coupons")
-//const StoresAdapter = new StoresAdapter("http://localhost:3000/stores")
+const storesAdapter = new StoresAdapter("http://127.0.0.1:3000/stores")
 
 couponsAdapter.fetchCoupons()
-//StoresAdapter.fetchStores()
+storesAdapter.fetchStores()
 
 const main = document.getElementById('main')
 const menu = document.getElementById('menu')
@@ -42,7 +42,7 @@ const callbacks = {
   allCoupons: renderAllCoupons,
   couponsStores: renderAllCouponsStores,
   newCoupon: renderNewCouponForm,
-  //newStore: renderNewStoreForm
+  newStore: renderNewStoreForm
 }
 
 function renderAllCoupons(){
@@ -82,17 +82,17 @@ function renderNewCouponForm(){
   main.appendChild(formDiv)
 }
 
-//function renderNewStoreForm() {
-//  formDiv.innerHTML = `
-//    Store:
-//    <input type="text" />
-//    <br>
-//    Website:
-//    <input type="text" />
-//    <br>
-//    <button>New Store</button>
-//  `
-//  main.appendChild(formDiv)
-//}
+function renderNewStoreForm() {
+  formDiv.innerHTML = `
+    Store:
+    <input type="text" />
+    <br>
+    Website:
+    <input type="text" />
+    <br>
+    <button>New Store</button>
+  `
+  main.appendChild(formDiv)
+}
 
 
