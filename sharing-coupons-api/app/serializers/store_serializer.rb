@@ -1,4 +1,8 @@
 class StoreSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :website
+  has_many :coupons
+  attributes :name
+  link :website
+
+
 end
