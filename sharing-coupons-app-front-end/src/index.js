@@ -36,12 +36,15 @@ function handleFormSubmit(event){
         storeId: selects[1].value
       }
       couponsAdapter.newCoupon(newCouponObj)
+      main.innerHTML = ""
+
     } else if(event.target.name == "new_store") {
       let newStoreObj = {
         name: inputs[0].value,
         website: inputs[1].value,
       }
       storesAdapter.newStore(newStoreObj)
+      main.innerHTML = ""
     }
   }
 }
@@ -64,7 +67,9 @@ function renderAllCoupons(){
 
 function renderAllCouponsStores(){
   Store.all.forEach(store => {
-    main.appendChild(store.fullRender())
+    if(store.coupons().map(coupon => coupon.expirationDate > today())) {
+      main.appendChild(store.fullRender())
+    }
   })
 }
 
@@ -79,44 +84,50 @@ function today() {
 
 function renderNewCouponForm(){
   formDiv.innerHTML = `
-    Coupon Code:
-    <input type="text" />
-    <br>
-    Offer Type:
-    <select>
-      <option value="online">Online Code</option>
-      <option value="store">In-Store Coupon</option>
-    </select>
-    <br>
-    Coupon Description:
-    <input type="text" />
-    <br>
-    Expiration Date:
-    <input type="text" />
-    <br>
-    Store:
-    <select>
-       <option value="default" selected="selected">Select Store of this Coupon</option>
-        ${Store.all.map(store => {
-          return `<option value=${store.id}>${store.name}</option>`
-        }).join("")}
-    </select>
-    <br>
-    <button name="new_coupon" type="button">New Coupon</button>
-  `
+    <div class="new-coupon">
+      Coupon Code:
+      <input type="text" />
+      <br>
+      Offer Type:
+      <select>
+        <option value="online">Online Code</option>
+        <option value="store">In-Store Coupon</option>
+      </select>
+      <br>
+      Coupon Description:
+      <input type="text" />
+      <br>
+      Expiration Date:
+      <input type="text" />
+      <br>
+      Store:
+      <select>
+         <option value="default" selected="selected">Select Store of this Coupon</option>
+          ${Store.all.map(store => {
+            return `<option value=${store.id}>${store.name}</option>`
+          }).join("")}
+      </select>
+      <br>
+      <button name="new_coupon" type="button">New Coupon</button>
+    </div>
+    `
   main.appendChild(formDiv)
 }
 
 function renderNewStoreForm() {
   formDiv.innerHTML = `
-    Store:
-    <input type="text" />
-    <br>
-    Website:
-    <input type="text" />
-    <br>
-    <button name="new_store" type="button">New Store</button>
-  `
+    <div class="new-store">  
+      Store:
+      <input type="text" />
+      <br>
+      Website:
+      <input type="text" />
+      <br>
+      <button name="new_store" type="button">New Store</button>
+    </div>
+    `
   main.appendChild(formDiv)
 }
+
+
 
