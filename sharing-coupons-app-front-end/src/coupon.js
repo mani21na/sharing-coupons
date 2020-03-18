@@ -41,6 +41,7 @@ class Coupon{
       <p>Offer Type: ${this.offerType}</p>
       <p>Description: ${this.description}</p>
       <p>Expiration Date: ${this.expirationDate}</p>
+      <button class="delete" data-id="${this.id}">Delete</button>
       </div>
       `
       return this.element
