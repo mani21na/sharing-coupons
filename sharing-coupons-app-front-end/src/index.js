@@ -2,21 +2,20 @@
 //Get all Stores
 
 //server request
-const couponsAdapter = new CouponsAdapter("http://127.0.0.1:3000/coupons")
-const storesAdapter = new StoresAdapter("http://127.0.0.1:3000/stores")
+const couponsAdapter = new CouponsAdapter("http://localhost:3000/coupons")
+const storesAdapter = new StoresAdapter("http://localhost:3000/stores")
 
 couponsAdapter.fetchCoupons()
 storesAdapter.fetchStores()
 
 const main = document.getElementById('main')
 const menu = document.getElementById('menu')
-
 const formDiv = document.createElement('div')
 
 menu.addEventListener('click', handleMenuClick)
 formDiv.addEventListener('click', handleFormSubmit)
 
-function handleMenuClick (event){
+function handleMenuClick (event) {
   if (event.target.id !== menu){
     main.innerHTML = ``
     callbacks[`${event.target.id}`]()
@@ -24,19 +23,29 @@ function handleMenuClick (event){
 }
 
 function handleFormSubmit(event){
-  if(event.target.tagName == "BUTTON"){
+  if(event.target.tagName == "BUTTON") {
     let inputs = formDiv.querySelectorAll('input')
-    let select = formDiv.querySelector('select')
-    let newCouponObj = {
-      code: inputs[0].value,
-      offer_type: inputs[1].value,
-      description: inputs[2].value,
-      expiration_date: inputs[3].value,
-      storeId: select.value
+    let selects = formDiv.querySelectorAll('select')
+    
+    if(event.target.name == "new_coupon") {
+      let newCouponObj = {
+        code: inputs[0].value,
+        offerType: selects[0].value,
+        description: inputs[1].value,
+        expirationDate: inputs[2].value,
+        storeId: selects[1].value
+      }
+      couponsAdapter.newCoupon(newCouponObj)
+    } else if(event.target.name == "new_store") {
+      let newStoreObj = {
+        name: inputs[0].value,
+        website: inputs[1].value,
+      }
+      storesAdapter.newStore(newStoreObj)
     }
-    couponsAdapter.newCoupon(newCouponObj)
   }
 }
+
 
 const callbacks = {
   allCoupons: renderAllCoupons,
@@ -47,7 +56,9 @@ const callbacks = {
 
 function renderAllCoupons(){
   Coupon.all.forEach(coupon => {
-    main.appendChild(coupon.fullRender())
+    if(coupon.expirationDate > today()) {
+      main.appendChild(coupon.fullRender())
+    }
   })
 }
 
@@ -55,6 +66,15 @@ function renderAllCouponsStores(){
   Store.all.forEach(store => {
     main.appendChild(store.fullRender())
   })
+}
+
+function today() {
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  return today = mm + '/' + dd + '/' + yyyy;
 }
 
 function renderNewCouponForm(){
@@ -71,13 +91,18 @@ function renderNewCouponForm(){
     Coupon Description:
     <input type="text" />
     <br>
+    Expiration Date:
+    <input type="text" />
+    <br>
+    Store:
     <select>
-       <option value="default" selected="selected">Select Store of this Coupon </option>
-     ${Store.all.map(store => {
-       return `<option value=${store.id}>${store.name}</option>`
-     }).join("")}
+       <option value="default" selected="selected">Select Store of this Coupon</option>
+        ${Store.all.map(store => {
+          return `<option value=${store.id}>${store.name}</option>`
+        }).join("")}
     </select>
-    <button type="button">New Coupon</button>
+    <br>
+    <button name="new_coupon" type="button">New Coupon</button>
   `
   main.appendChild(formDiv)
 }
@@ -90,9 +115,8 @@ function renderNewStoreForm() {
     Website:
     <input type="text" />
     <br>
-    <button>New Store</button>
+    <button name="new_store" type="button">New Store</button>
   `
   main.appendChild(formDiv)
 }
-
 
