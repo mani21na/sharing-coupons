@@ -1,1 +1,93 @@
+/* Style the body */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(201, 206, 207);
+}
+
+/* Header/logo Title */
+#app-header {
+    font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
+    font-size: 30px;
+    text-align: center;
+    background: rgb(21, 133, 123);
+    color: white;
+    opacity: .8;
+    height: 7rem;
+    padding: 60px;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: nowrap; 
+    text-align: center;
+    background: rgb(21, 133, 123);
+    color: white;
+    opacity: .8;
+}
+#menu span {
+    background-color: rgb(21, 133, 123);
+    /*width: 240px;*/
+    margin: 10px;
+    text-align: center;
+    /*line-height: 50px;*/
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+#menu span:hover {
+    background: rgb(15, 87, 81);
+    color: rgb(201, 206, 207);
+  }
+
+#main {
+    text-align: center;
+}
+
+.store, .coupon {
+    text-align: left;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    display: -webkit-inline-flex;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px grey;
+}
+
+.new-coupon, .new-store {
+    text-align: left;
+    border: grey solid 1px;
+    background: white;
+    padding: 1rem;
+    margin: 1rem 3rem 1rem;
+}
+
+button {
+    position: relative;
+    background-color: #e04b52;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 18px;
+    justify-self: center;
+}
+
+  button:hover {
+    background-color: whitesmoke;
+    border: #e04b52 solid 1px;
+    color: #e04b52;
+  }
+
+  .input-text {
+    border-radius: 5px;
+    height: 2rem;
+    width: 60%;
+    font-size: 18px;
+    font-family: monospace;
+    margin: 3px 1rem;
+  }
+
 
