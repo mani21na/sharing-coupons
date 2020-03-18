@@ -22,22 +22,26 @@ class Coupon{
   
     partialRender(){
       this.element.innerHTML = `
-        <h3>${this.code}</h3>
-        <p>Store: ${this.store().name}</p>
-        <p>Store: ${this.store().name}</p>
-        <p>Description: ${this.description}</p>
-      `
+        <div calss="coupon">
+         <h3>${this.code}</h3>
+          <p>Store: ${this.store().name}</p>
+         <p>Store: ${this.store().name}</p>
+         <p>Description: ${this.description}</p>
+        </div>
+        `
       return this.element
     }
   
   
     fullRender(){
       this.element.innerHTML = `
+      <div calss="coupon">
       <h1>${this.code}</h1>
       <p>Store: <a href=${this.store().website} target="_blank">${this.store().name}</a></p>
       <p>Offer Type: ${this.offerType}</p>
       <p>Description: ${this.description}</p>
       <p>Expiration Date: ${this.expirationDate}</p>
+      </div>
       `
       return this.element
     }
