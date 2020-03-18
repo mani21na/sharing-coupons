@@ -12,6 +12,12 @@ class CouponsAdapter {
         .then(() => console.log(Coupon.all))
     }
   
+    sanitizeAndAddCoupon(couponObj) {
+      console.log(couponObj);
+      let sanitized = {...couponObj.attributes, id: couponObj.id, storeId: couponObj.relationships.store.data.id}
+      new Coupon(sanitized)
+    }
+
     newCoupon(couponObj) {
       let configObj = {
         method: "POST",
@@ -21,11 +27,8 @@ class CouponsAdapter {
       fetch(this.baseURL, configObj)
         .then(res => res.json())
         .then((resObj) => this.sanitizeAndAddCoupon(resObj.data))
-    }
-  
-    sanitizeAndAddCoupon(couponObj) {
-      console.log(couponObj);
-      let sanitized = {...couponObj.attributes, id: couponObj.id, storeId: couponObj.relationships.store.data.id}
-      new Coupon(sanitized)
+        .catch(function(error) {
+          console.log(error.message);
+        });
     }
   }

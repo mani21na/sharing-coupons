@@ -1,13 +1,12 @@
 class Coupon{
-
     static all = []
   
-    constructor({id, code, offerType, description, expirationDate, storeId}){
+    constructor({id, code, offer_type, description, expiration_date, storeId}){
       this.id = id
       this.code = code
-      this.offerType = offerType
+      this.offerType = offer_type
       this.description = description
-      this.expirationDate = expirationDate
+      this.expirationDate = expiration_date
       this.storeId = storeId
   
       this.element = document.createElement('div')
@@ -18,7 +17,6 @@ class Coupon{
     }
   
     store(){
-      debugger;
       return Store.all.find(store => store.id === this.storeId)
     }
   
@@ -36,7 +34,7 @@ class Coupon{
     fullRender(){
       this.element.innerHTML = `
       <h1>${this.code}</h1>
-      <p>Store: ${this.store().name}</p>
+      <p>Store: <a href=${this.store().website} target="_blank">${this.store().name}</a></p>
       <p>Offer Type: ${this.offerType}</p>
       <p>Description: ${this.description}</p>
       <p>Expiration Date: ${this.expirationDate}</p>
