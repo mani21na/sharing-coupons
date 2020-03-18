@@ -13,8 +13,7 @@ class StoresAdapter {
         }
 
     sanitizeAndAddStore(storeObj) {
-        console.log(storeObj);
-        let sanitized = {...storeObj.attributes, id: storeObj.id, website: storeObj.link}
+        let sanitized = {...storeObj.attributes, id: storeObj.id}
         new Store(sanitized)
     }
 
