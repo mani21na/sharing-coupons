@@ -14,6 +14,7 @@ const formDiv = document.createElement('div')
 
 menu.addEventListener('click', handleMenuClick)
 formDiv.addEventListener('click', handleFormSubmit)
+main.addEventListener('click', handleDelete)
 
 function handleMenuClick (event) {
   if (event.target.id !== menu){
@@ -129,5 +130,10 @@ function renderNewStoreForm() {
   main.appendChild(formDiv)
 }
 
-
+function handleDelete(event) {
+  if(event.target.tagName == "BUTTON") {
+    let id = event.target.dataset.id
+    couponsAdapter.delCoupon(id)
+  }
+}
 
