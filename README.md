@@ -3,10 +3,10 @@
 Sharing Coupon App
 
 * Services
-    Register new coupon information
-    Register new store information
-    View all registered coupons
-    View all coupons belonging to a store
+    -Register new coupon information
+    -Register new store information
+    -View all registered coupons
+    -View all coupons belonging to a store
 
 * RUBY VERSION
     ruby 2.7.0p0
