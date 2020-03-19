@@ -22,11 +22,11 @@ class Store{
     fullRender() {
         //if(this.coupons().length !== 0) {
             this.element.innerHTML = `
-            <div calss="store">
-                <h1><a href=${this.website} target="_blank">${this.name}</a></h1>
-                <h3>This Store's Coupons:</h3>
-                ${this.coupons().map(coupon => coupon.code + ":" + coupon.description + `<button class="delete" data-id="${coupon.id}">Delete</button>`).join(`<br>`)}
-            </div>
+                <div class="store_list">
+                    <h1><a href=${this.website} target="_blank">${this.name}</a></h1>
+                    <h3>This Store's Coupons:</h3>
+                    ${this.coupons().map(coupon => coupon.code + ":" + coupon.description + `  <button class="delete" data-id="${coupon.id}">Delete</button>`).join(`<br>`)}
+                </div>
             `
             return this.element
         //} else {

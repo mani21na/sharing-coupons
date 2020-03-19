@@ -27,6 +27,10 @@ class CouponsAdapter {
       fetch(this.baseURL, configObj)
         .then(res => res.json())
         .then((resObj) => this.sanitizeAndAddCoupon(resObj.data))
+        .then(() => {
+          main.innerHTML = ""
+          renderAllCoupons()
+        })
         .catch(function(error) {
           console.log(error.message);
         });
@@ -35,17 +39,19 @@ class CouponsAdapter {
     delCoupon(objId) {
       let configObj = {
         method: "DELETE",
-        headers: {"Access-Control-Request-Headers": "origin, x-requested-with", "Content-Type": "application/json", "Accepts": "application/json"},
+        headers: {"Content-Type": "application/json", "Accepts": "application/json"},
       }
       let id = objId
 
       fetch(`${this.baseURL}/${objId}`, configObj)        
         .then(function(){
           console.log("delete!")
-        .catch (error => console.log(error))
-      });
-
-      this.arrayRemove(Coupon.all, id)
+        })
+        .then(() => Coupon.all = this.arrayRemove(Coupon.all, id))
+        .then(() => {
+          main.innerHTML = ""
+          renderAllCoupons()
+        })
     }
 
     arrayRemove(array, value) { 

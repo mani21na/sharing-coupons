@@ -26,5 +26,13 @@ class StoresAdapter {
         fetch(this.baseURL, configObj)
             .then(res => res.json())
             .then((resObj) => this.sanitizeAndAddStore(resObj.data))
+            .then(() => {
+                main.innerHTML = ""
+                renderAllCouponsStores()
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            });
     }
+
 }
