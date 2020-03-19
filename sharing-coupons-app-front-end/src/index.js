@@ -50,7 +50,6 @@ function handleFormSubmit(event){
   }
 }
 
-
 const callbacks = {
   allCoupons: renderAllCoupons,
   couponsStores: renderAllCouponsStores,
@@ -59,7 +58,8 @@ const callbacks = {
 }
 
 function renderAllCoupons(){
-  Coupon.all.forEach(coupon => {
+  const couponList = Coupon.all.slice().reverse()
+  couponList.forEach(coupon => {
     if(coupon.expirationDate > today()) {
       main.appendChild(coupon.fullRender())
     }
@@ -67,7 +67,8 @@ function renderAllCoupons(){
 }
 
 function renderAllCouponsStores(){
-  Store.all.forEach(store => {
+  const storeList = Store.all.slice().reverse()
+  storeList.forEach(store => {
     if(store.coupons().map(coupon => coupon.expirationDate > today())) {
       main.appendChild(store.fullRender())
     }
